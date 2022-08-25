@@ -23,12 +23,12 @@ namespace VareDB.Controllers
         [HttpGet("{type}")]
         public async Task<ActionResult<List<vare_type>>> getType(string type)
         {
-            var vare = await _context.vare_Type.FindAsync(type);
-            if (vare == null)
+            var dbtype = await _context.vare_Type.FindAsync(type);
+            if (dbtype == null)
             {
                 return Ok(0);
             } else {
-                return Ok(type);
+                return Ok(dbtype);
             }
         }
         [HttpPost]
