@@ -49,7 +49,7 @@ namespace VareDB.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<vare>>> AddHero(vare vare)
+        public async Task<ActionResult<List<vare>>> addVare(vare vare)
         {
             _context.vare.Add(vare);
             await _context.SaveChangesAsync();
