@@ -26,10 +26,11 @@ namespace VareDB.Controllers
             await _context.SaveChangesAsync();
 
             //opretter Ordre
+            DateOnly dato = new DateOnly();
             var ordreid = kunde.Kunde_id;
             Ordre ordre = new Ordre();
             ordre.Kunde_id = ordreid;
-            ordre.Ordre_date = dato;
+            ordre.Ordre_date = dato.ToString();
             _context.Ordre.Add(ordre);
             await _context.SaveChangesAsync();
 
